@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calorix - Support</title>
+  <meta name="description" content="Calorix - Support and help center. Get answers, contact support, and read our FAQs." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #9ca3af;
+      --text: #e5e7eb;
+      --accent: #22c55e;
+      --accent-2: #38bdf8;
+      --border: #1f2937;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, #0b1020 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), #0ea5e9 70%);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: 0.2px;
+    }
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #0b1222;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn.active {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15) inset;
+    }
+    .card {
+      background: #0b1222;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-top: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+    .muted { color: var(--muted); }
+    .list { margin: 6px 0 0 0; padding: 0 18px; }
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .kpi {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #0b162b;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    /* FAQ */
+    details { border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; background: #0b1222; }
+    summary {
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details + details { margin-top: 10px; }
+    /* Footer */
+    footer {
+      margin-top: 26px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .badges { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .badge { background: #0b162b; border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1 id="title">Calorix - עזרה ותמיכה</h1>
+          <div class="muted" id="subtitle">מצא תשובות מהירות, דווח על בעיות ופנה אלינו ישירות.</div>
+        </div>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language toggle">
+        <button class="btn active" id="btn-he" type="button">עברית</button>
+        <button class="btn" id="btn-en" type="button">English</button>
+      </div>
+    </header>
+
+    <section class="card" id="contact">
+      <h2>יצירת קשר</h2>
+      <p class="muted">אנחנו כאן כדי לעזור. לרוב נענה בתוך 24 שעות.</p>
+      <div class="kpi">
+        <span class="pill">גרסת אפליקציה: <strong>1.0.0</strong></span>
+        <span class="pill">עודכן לאחרונה: <strong>November 10, 2025</strong></span>
+        <span class="pill">מצב שירות: <a href="#" id="statusLink">Status</a></span>
+      </div>
+      <ul class="list">
+        <li>מייל תמיכה: <a href="mailto:support@calorix.app">support@calorix.app</a></li>
+        <li>טופס פנייה: <a href="https://forms.gle/" target="_blank" rel="noopener">פתח טופס</a> (אופציונלי)</li>
+        <li>פרטיות ותנאים: <a href="#" id="privacyLink">מדיניות פרטיות</a> | <a href="#" id="termsLink">תנאי שימוש</a></li>
+      </ul>
+    </section>
+
+    <section class="grid" id="quickHelp">
+      <div class="card">
+        <h2>עזרה מהירה</h2>
+        <ul class="list">
+          <li>בעיית כניסה עם Apple/Google - בדקו שהאימייל תואם לחשבון הקיים.</li>
+          <li>מיקרופון לא מזוהה - ודאו שהרשאות מיקרופון מאושרות בהגדרות.</li>
+          <li>סנכרון נתונים - ודאו חיבור אינטרנט ושחזור באמצעות אותו חשבון.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>קישורים שימושיים</h2>
+        <ul class="list">
+          <li><a href="#" id="guideLink">מדריך התחלה מהירה</a></li>
+          <li><a href="#" id="faqLink">שאלות נפוצות</a></li>
+          <li><a href="#" id="reportLink">דיווח על תקלה</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="faq">
+      <h2>שאלות נפוצות</h2>
+
+      <details>
+        <summary>איך מאפסים סיסמה?</summary>
+        <div>
+          היכנסו למסך הכניסה, לחצו על "שכחת סיסמה" ופעלו לפי ההוראות. אם נרשמתם עם Apple/Google - אין סיסמה מקומית.
+        </div>
+      </details>
+
+      <details>
+        <summary>למה הספירה הקלורית נראית לא מדויקת?</summary>
+        <div>
+          ודאו שמוגדרים גיל, גובה, משקל, יעד ורמת פעילות. בדקו גם את גודל המנות בלוגים. אם משהו מרגיש לא תקין, פנו אלינו עם צילום מסך.
+        </div>
+      </details>
+
+      <details>
+        <summary>איך מבטלים מנוי או תקופת ניסיון?</summary>
+        <div>
+          ביטול מנוי מתבצע דרך App Store או Google Play בחשבון שלכם. לאחר הביטול - הגישה תישאר עד סוף התקופה ששולמה.
+        </div>
+      </details>
+
+      <details>
+        <summary>איך מדווחים על באג?</summary>
+        <div>
+          שלחו מייל ל-<a href="mailto:support@calorix.app">support@calorix.app</a> עם תיאור קצר, צעדים לשחזור, ודגם המכשיר. אפשר גם לצרף סרטון קצר.
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <div>© 2025 Calorix</div>
+      <div class="badges">
+        <span class="badge">Accessibility Ready</span>
+        <span class="badge">Mobile Friendly</span>
+        <span class="badge">Secure</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- English copy -->
+  <template id="en-copy">
+    <data data-title="Calorix - Help & Support"></data>
+    <data data-subtitle="Find quick answers, report issues, or contact us directly."></data>
+    <data data-contact-title="Contact us"></data>
+    <data data-contact-sub="We usually respond within 24 hours."></data>
+    <data data-version="App Version: "></data>
+    <data data-updated="Last updated: "></data>
+    <data data-status="Status"></data>
+    <data data-email="Support email: "></data>
+    <data data-form="Contact form"></data>
+    <data data-privacy="Privacy Policy"></data>
+    <data data-terms="Terms of Use"></data>
+    <data data-quick="Quick help"></data>
+    <data data-links="Useful links"></data>
+    <data data-quick-1="Login issue with Apple/Google - make sure the email matches an existing account."></data>
+    <data data-quick-2="Microphone not detected - enable mic permissions in device settings."></data>
+    <data data-quick-3="Data sync - confirm internet connection and same account on all devices."></data>
+    <data data-link-1="Quick start guide"></data>
+    <data data-link-2="FAQ"></data>
+    <data data-link-3="Report a bug"></data>
+    <data data-faq-title="Frequently asked questions"></data>
+    <data data-faq-1-q="How do I reset my password?"></data>
+    <data data-faq-1-a="Open the login screen, tap 'Forgot password' and follow the flow. If you registered with Apple/Google, there is no local password."></data>
+    <data data-faq-2-q="Why does the calorie count look off?"></data>
+    <data data-faq-2-a="Ensure your age, height, weight, goal, and activity level are set correctly and verify serving sizes in your logs. If it still seems wrong, email us a screenshot."></data>
+    <data data-faq-3-q="How do I cancel my subscription or trial?"></data>
+    <data data-faq-3-a="Manage cancellations from your App Store or Google Play account. Access remains until the paid period ends."></data>
+    <data data-faq-4-q="How do I report a bug?"></data>
+    <data data-faq-4-a="Email <a href='mailto:support@calorix.app'>support@calorix.app</a> with a short description, reproduction steps, and your device model. A short screen recording helps."></data>
+  </template>
+
+  <script>
+    // Simple language toggle without external libs
+    const btnHe = document.getElementById('btn-he');
+    const btnEn = document.getElementById('btn-en');
+    const enTpl = document.getElementById('en-copy');
+
+    function setHe() {
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+      btnHe.classList.add('active');
+      btnEn.classList.remove('active');
+      // Reload page to original Hebrew copy by refreshing from the original HTML
+      location.reload();
+    }
+
+    function setEn() {
+      document.documentElement.lang = 'en';
+      document.documentElement.dir = 'ltr';
+      btnEn.classList.add('active');
+      btnHe.classList.remove('active');
+
+      const t = enTpl.content;
+      // Titles
+      document.getElementById('title').textContent = t.querySelector('[data-title]').dataset.title;
+      document.getElementById('subtitle').textContent = t.querySelector('[data-subtitle]').dataset.subtitle;
+      // Contact section texts
+      document.querySelector('#contact h2').textContent = t.querySelector('[data-contact-title]').dataset.contactTitle;
+      document.querySelector('#contact .muted').textContent = t.querySelector('[data-contact-sub]').dataset.contactSub;
+      // Pills
+      const pills = document.querySelectorAll('.pill');
+      pills[0].innerHTML = t.querySelector('[data-version]').dataset.version + '<strong>1.0.0</strong>';
+      pills[1].innerHTML = t.querySelector('[data-updated]').dataset.updated + '<strong>November 10, 2025</strong>';
+      document.getElementById('statusLink').textContent = t.querySelector('[data-status]').dataset.status;
+      // Links
+      document.querySelector('#contact .list li:nth-child(1)').innerHTML = t.querySelector('[data-email]').dataset.email + '<a href="mailto:support@calorix.app">support@calorix.app</a>';
+      document.querySelector('#contact .list li:nth-child(2) a').textContent = t.querySelector('[data-form]').dataset.form;
+      document.getElementById('privacyLink').textContent = t.querySelector('[data-privacy]').dataset.privacy;
+      document.getElementById('termsLink').textContent = t.querySelector('[data-terms]').dataset.terms;
+      // Quick help cards
+      document.querySelector('#quickHelp .card:nth-child(1) h2').textContent = t.querySelector('[data-quick]').dataset.quick;
+      document.querySelector('#quickHelp .card:nth-child(2) h2').textContent = t.querySelector('[data-links]').dataset.links;
+      const quick = [t.querySelector('[data-quick-1]').dataset.quick1, t.querySelector('[data-quick-2]').dataset.quick2, t.querySelector('[data-quick-3]').dataset.quick3];
+      const qList = document.querySelector('#quickHelp .card:nth-child(1) .list');
+      qList.innerHTML = quick.map(x => `<li>${x}</li>`).join('');
+      const linkTexts = [t.querySelector('[data-link-1]').dataset.link1, t.querySelector('[data-link-2]').dataset.link2, t.querySelector('[data-link-3]').dataset.link3];
+      const linkEls = document.querySelectorAll('#quickHelp .card:nth-child(2) .list a');
+      linkEls[0].textContent = linkTexts[0];
+      linkEls[1].textContent = linkTexts[1];
+      linkEls[2].textContent = linkTexts[2];
+      // FAQ
+      document.querySelector('#faq h2').textContent = t.querySelector('[data-faq-title]').dataset.faqTitle;
+      const faqs = [
+        [t.querySelector('[data-faq-1-q]').dataset.faq1Q, t.querySelector('[data-faq-1-a]').dataset.faq1A],
+        [t.querySelector('[data-faq-2-q]').dataset.faq2Q, t.querySelector('[data-faq-2-a]').dataset.faq2A],
+        [t.querySelector('[data-faq-3-q]').dataset.faq3Q, t.querySelector('[data-faq-3-a]').dataset.faq3A],
+        [t.querySelector('[data-faq-4-q]').dataset.faq4Q, t.querySelector('[data-faq-4-a]').dataset.faq4A],
+      ];
+      const details = document.querySelectorAll('#faq details');
+      faqs.forEach((pair, i) => {
+        details[i].querySelector('summary').textContent = pair[0];
+        details[i].querySelector('div').innerHTML = pair[1];
+      });
+    }
+
+    btnHe.addEventListener('click', setHe);
+    btnEn.addEventListener('click', setEn);
+  </script>
+
+  <!-- Basic FAQ structured data for better indexing (optional but nice to have) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "איך מאפסים סיסמה?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "היכנסו למסך הכניסה, לחצו על 'שכחת סיסמה' ופעלו לפי ההוראות. אם נרשמתם עם Apple/Google - אין סיסמה מקומית."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "למה הספירה הקלורית נראית לא מדויקת?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ודאו שמוגדרים גיל, גובה, משקל, יעד ורמת פעילות ובדקו את גודל המנות ביומן. אם עדיין נראה לא תקין, שלחו צילום מסך במייל."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "איך מבטלים מנוי או תקופת ניסיון?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ביטול מנוי דרך חשבון App Store או Google Play שלכם. לאחר הביטול - הגישה תישאר עד סוף התקופה ששולמה."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "איך מדווחים על באג?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "שלחו מייל ל-support@calorix.app עם תיאור קצר, צעדים לשחזור, ודגם המכשיר. אפשר לצרף סרטון קצר."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
